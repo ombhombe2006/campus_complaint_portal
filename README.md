@@ -4,21 +4,21 @@ A complete web application for campus facility reviews and complaint management 
 
 ## 🚀 Quick Start Options
 
-### Option 1: Simple Demo (No Setup Required)
-**Perfect for quick presentations and UI showcasing**
+### Option 1: Zero Setup Demo (Instant)
+**Perfect for presentations - works immediately**
 
-1. Navigate to `simple-demo/` folder
+1. Navigate to `zero-setup-demo/` folder
 2. Open `index.html` in any web browser
 3. Use demo credentials:
    - **User**: `user1` / `user123`
    - **Admin**: `admin` / `admin123`
 
-✅ Works immediately - no backend, database, or server setup needed!
+✅ **Zero dependencies** - works on any computer instantly!
 
-### Option 2: Full Implementation 
-**Complete working application with Spring Boot backend**
+### Option 2: Full Spring Boot Application 
+**Complete working application with real backend**
 
-Requires: MySQL + Java + Maven setup (see Full Setup section below)
+Requires: MySQL + Java + Maven (see setup below)
 
 ## 🌟 Features
 
@@ -47,28 +47,26 @@ Requires: MySQL + Java + Maven setup (see Full Setup section below)
 
 ```
 campus-review-portal/
-├── simple-demo/           # 🎯 Frontend-only demo (works immediately)
+├── zero-setup-demo/       # 🎯 Zero dependency demo (instant)
 │   ├── index.html         # Demo homepage
 │   ├── user-dashboard.html
 │   ├── admin-dashboard.html
 │   ├── css/
-│   └── js/                # Modified with mock data
-├── frontend/              # 🚀 Full frontend (requires backend)
+│   └── js/                # Mock data simulation
+├── frontend/              # 🚀 Full frontend (for Spring Boot)
 │   ├── index.html
 │   ├── css/style.css
-│   └── js/                # Full API integration
-├── backend/               # ☕ Spring Boot backend
+│   └── js/                # Real API integration
+├── backend/               # ☕ Spring Boot application
 │   ├── src/main/java/
 │   │   └── com/campus/
-│   │       ├── controller/ # REST API endpoints
+│   │       ├── controller/ # REST controllers
 │   │       ├── entity/     # JPA entities
-│   │       └── repository/ # Spring Data repositories
-│   ├── pom.xml            # Maven configuration
-│   └── target/            # Built JAR file
+│   │       └── repository/ # Data repositories
+│   └── pom.xml            # Maven configuration
 ├── database/
 │   └── schema.sql         # 🗄️ MySQL database setup
-├── archive-docs/          # 📚 Archived documentation
-└── WARP.md               # 🤖 AI assistant guidance
+└── backups/              # 📚 Archive & backup files
 ```
 
 ## 🎯 Demo Credentials
@@ -108,8 +106,8 @@ java -jar target/campus-review-portal.jar
 ```
 
 ### Access Application
-- **Simple Demo**: Open `simple-demo/index.html`
-- **Full Version**: http://localhost:8080 (Spring Boot app)
+- **Zero Setup Demo**: Open `zero-setup-demo/index.html`
+- **Full Application**: http://localhost:8080 (Spring Boot)
 
 ## 🔧 Development
 
