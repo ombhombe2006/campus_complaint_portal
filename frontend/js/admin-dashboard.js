@@ -59,7 +59,7 @@ function showSection(sectionName) {
 // Load all reviews for admin management
 async function loadAllReviews() {
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/reviews', {
+        const response = await fetch('http://localhost:8080/api/reviews', {
             method: 'GET',
             credentials: 'include'
         });
@@ -109,7 +109,7 @@ async function loadAllReviews() {
 // Load all complaints for admin management
 async function loadAllComplaints() {
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/complaints', {
+        const response = await fetch('http://localhost:8080/api/complaints', {
             method: 'GET',
             credentials: 'include'
         });
@@ -158,7 +158,7 @@ async function loadFacilitiesWithStats() {
     try {
         // This is a simplified version - in a full implementation, 
         // you'd create an endpoint that returns facility stats
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/reviews/facilities');
+        const response = await fetch('http://localhost:8080/api/reviews/facilities');
         const facilities = await response.json();
         
         if (!Array.isArray(facilities)) {
@@ -191,7 +191,7 @@ async function loadFacilitiesWithStats() {
 // Update review status
 async function updateReviewStatus(reviewId, status) {
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/reviews', {
+        const response = await fetch('http://localhost:8080/api/reviews', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -264,7 +264,7 @@ async function handleFacilitySubmit(event) {
     
     try {
         // Note: You'd need to implement this endpoint
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/facilities', {
+        const response = await fetch('http://localhost:8080/api/facilities', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -298,7 +298,7 @@ async function handleComplaintUpdate(event) {
     const adminResponse = document.getElementById('adminResponse').value;
     
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/complaints', {
+        const response = await fetch('http://localhost:8080/api/complaints', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -63,7 +63,7 @@ function showSection(sectionName) {
 // Load user's reviews
 async function loadUserReviews() {
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/reviews/user', {
+        const response = await fetch('http://localhost:8080/api/reviews/user', {
             method: 'GET',
             credentials: 'include'
         });
@@ -105,7 +105,7 @@ async function loadUserReviews() {
 // Load user's complaints
 async function loadUserComplaints() {
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/complaints/user', {
+        const response = await fetch('http://localhost:8080/api/complaints/user', {
             method: 'GET',
             credentials: 'include'
         });
@@ -147,7 +147,7 @@ async function loadUserComplaints() {
 // Load facilities for dropdowns
 async function loadFacilities() {
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/reviews/facilities');
+        const response = await fetch('http://localhost:8080/api/reviews/facilities');
         const facilities = await response.json();
         
         if (!Array.isArray(facilities)) {
@@ -209,7 +209,7 @@ async function handleReviewSubmit(event) {
     }
     
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/reviews', {
+        const response = await fetch('http://localhost:8080/api/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -255,7 +255,7 @@ async function handleComplaintSubmit(event) {
     }
     
     try {
-        const response = await fetch('http://localhost:8080/campus-review-portal/api/complaints', {
+        const response = await fetch('http://localhost:8080/api/complaints', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
