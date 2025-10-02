@@ -1,6 +1,6 @@
 # 🏫 Campus Review Portal
 
-A complete 3-tier web application for campus facility reviews and complaint management system built with simple, proven technologies.
+A complete web application for campus facility reviews and complaint management system built with Spring Boot.
 
 ## 🚀 Quick Start Options
 
@@ -16,9 +16,9 @@ A complete 3-tier web application for campus facility reviews and complaint mana
 ✅ Works immediately - no backend, database, or server setup needed!
 
 ### Option 2: Full Implementation 
-**Complete working application with real backend**
+**Complete working application with Spring Boot backend**
 
-Requires: MySQL + Tomcat + Maven setup (see Full Setup section below)
+Requires: MySQL + Java + Maven setup (see Full Setup section below)
 
 ## 🌟 Features
 
@@ -37,10 +37,10 @@ Requires: MySQL + Tomcat + Maven setup (see Full Setup section below)
 ## 🏗️ Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (vanilla - no frameworks)
-- **Backend**: Java Servlets with JDBC (no frameworks - direct database access)
-- **Database**: MySQL with straightforward schema design
+- **Backend**: Spring Boot with JPA/Hibernate (no plain servlets)
+- **Database**: MySQL with JPA entity mapping
 - **Build Tool**: Maven
-- **Server**: Apache Tomcat
+- **Server**: Spring Boot embedded Tomcat
 - **Theme**: Red and white color scheme
 
 ## 📁 Project Structure
@@ -57,17 +57,18 @@ campus-review-portal/
 │   ├── index.html
 │   ├── css/style.css
 │   └── js/                # Full API integration
-├── backend/               # ☕ Java backend
+├── backend/               # ☕ Spring Boot backend
 │   ├── src/main/java/
 │   │   └── com/campus/
-│   │       ├── servlet/   # REST API endpoints
-│   │       └── util/      # Database connection
-│   ├── pom.xml           # Maven configuration
-│   └── target/           # Built WAR file
+│   │       ├── controller/ # REST API endpoints
+│   │       ├── entity/     # JPA entities
+│   │       └── repository/ # Spring Data repositories
+│   ├── pom.xml            # Maven configuration
+│   └── target/            # Built JAR file
 ├── database/
-│   └── schema.sql        # 🗄️ MySQL database setup
-├── archive-docs/         # 📚 Archived documentation
-└── WARP.md              # 🤖 AI assistant guidance
+│   └── schema.sql         # 🗄️ MySQL database setup
+├── archive-docs/          # 📚 Archived documentation
+└── WARP.md               # 🤖 AI assistant guidance
 ```
 
 ## 🎯 Demo Credentials
@@ -83,38 +84,39 @@ campus-review-portal/
 ## ⚡ Full Setup Instructions
 
 ### Prerequisites
-- Java 8+ (✅ You have Java 24)
+- Java 8+ (✅ Works with Java 11+)
 - MySQL Server
-- Apache Tomcat 9
 - Maven (for building)
 
 ### Database Setup
 1. Start MySQL Server
 2. Import `database/schema.sql`
 3. Creates database: `campus_review_portal`
-4. Default connection: `root/password` (change in `DatabaseConnection.java` if needed)
+4. Default connection: `root/password` (change in `application.properties` if needed)
 
 ### Backend Build & Deploy
 ```bash
-# Build WAR file
+# Run development server
 cd backend
-mvn clean package
+mvn spring-boot:run
 
-# Deploy to Tomcat
-# Copy target/campus-review-portal.war to Tomcat webapps/
-# Start Tomcat server
+# Or build JAR and run
+mvn clean package
+java -jar target/campus-review-portal.jar
+
+# Backend runs on http://localhost:8080
 ```
 
 ### Access Application
 - **Simple Demo**: Open `simple-demo/index.html`
-- **Full Version**: http://localhost:8080/campus-review-portal/
+- **Full Version**: http://localhost:8080 (Spring Boot app)
 
 ## 🔧 Development
 
-- **Database changes**: Update `database/schema.sql`, reimport
-- **Backend changes**: Edit Java files, run `mvn clean package`, redeploy WAR
+- **Database changes**: Update `database/schema.sql`, restart Spring Boot app
+- **Backend changes**: Edit Java files, Spring Boot auto-restarts in dev mode
 - **Frontend changes**: Edit HTML/CSS/JS files directly
-- **Testing**: Use browser dev tools, check Tomcat logs, verify database
+- **Testing**: Use browser dev tools, check Spring Boot logs, verify database
 
 ## 🎨 Design Highlights
 
@@ -146,7 +148,7 @@ Start-Process "simple-demo\index.html"
 
 **For Full Backend Demo:**
 ```powershell
-# 30-minute setup - complete implementation
+# 15-minute setup - Spring Boot makes it easier!
 # See DEPLOYMENT_GUIDE.md for step-by-step guide
 ```
 
