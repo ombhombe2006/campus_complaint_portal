@@ -303,7 +303,7 @@ function addDemoBanner() {
         right: 0;
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    };
+    `};
     
     // Adjust body padding to account for banner
     document.body.style.paddingTop = '50px';
