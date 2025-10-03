@@ -231,7 +231,7 @@ async function handleReviewSubmit(event) {
     // Mock successful submission (no API call)
     const result = { success: true };
     
-    showMessage('reviewMessage', 'Review submitted successfully! (Demo Mode)', 'success');
+    showMessage('reviewMessage', 'Review submitted successfully!', 'success');
     event.target.reset();
     
     // Refresh reviews if on that section
@@ -260,7 +260,7 @@ async function handleComplaintSubmit(event) {
     // Mock successful submission (no API call)
     const result = { success: true };
     
-    showMessage('complaintMessage', 'Complaint submitted successfully! (Demo Mode)', 'success');
+    showMessage('complaintMessage', 'Complaint submitted successfully!', 'success');
     event.target.reset();
     
     // Refresh complaints if on that section
@@ -303,9 +303,7 @@ function addDemoBanner() {
         right: 0;
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    `;
-    banner.innerHTML = '🎯 DEMO MODE - Using Mock Data (No Backend Required)';
-    document.body.insertBefore(banner, document.body.firstChild);
+    };
     
     // Adjust body padding to account for banner
     document.body.style.paddingTop = '50px';
