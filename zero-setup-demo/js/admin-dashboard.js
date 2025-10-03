@@ -231,7 +231,7 @@ async function loadFacilitiesWithStats() {
 // Update review status - DEMO VERSION WITH MOCK RESPONSE
 async function updateReviewStatus(reviewId, status) {
     // Mock successful update (no API call)
-    alert(`Review ${status.toLowerCase()} successfully! (Demo Mode)`);
+    alert(`Review ${status.toLowerCase()} successfully!`);
     loadAllReviews(); // Refresh the list with mock data
 }
 
@@ -280,7 +280,7 @@ async function handleFacilitySubmit(event) {
     }
     
     // Mock successful submission (no API call)
-    showMessage('facilityMessage', 'Facility added successfully! (Demo Mode)', 'success');
+    showMessage('facilityMessage', 'Facility added successfully!', 'success');
     event.target.reset();
     loadFacilitiesWithStats(); // Refresh the list
 }
@@ -334,8 +334,6 @@ function addDemoBanner() {
         z-index: 1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     `;
-    banner.innerHTML = '🛡️ ADMIN DEMO MODE - Using Mock Data (No Backend Required)';
-    document.body.insertBefore(banner, document.body.firstChild);
     
     // Adjust body padding to account for banner
     document.body.style.paddingTop = '50px';
